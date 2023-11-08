@@ -5,7 +5,7 @@ import Home from "./screens/Home";
 import Categories from "./screens/Categories";
 import Vegetables from "./screens/Vegetables";
 import Details from "./screens/Details";
-
+import { FontAwesome5, AntDesign } from "@expo/vector-icons";
 
 export default function App() {
   return (
@@ -38,9 +38,51 @@ const Tab = createBottomTabNavigator();
 function MyTabs() {
   return (
     <Tab.Navigator screenOptions={{ headerShown: false }}>
-      <Tab.Screen name="Menu" component={MenuStack} options={{}} />
-      <Tab.Screen name="Cart" component={CartStack} />
-      <Tab.Screen name="Profile" component={ProfileStack} />
+      <Tab.Screen
+        name="Menu"
+        component={MenuStack}
+        options={{
+          title: "",
+          tabBarIcon: ({ focused }) => (
+            <FontAwesome5
+              style={{ top: 6, color: focused ? "#7203FF" : "grey" }}
+              name="border-all"
+              size={22}
+              color="black"
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Cart"
+        component={Cart}
+        options={{
+          title: "",
+          tabBarIcon: ({ focused }) => (
+            <AntDesign
+              name="shoppingcart"
+              style={{ top: 6, color: focused ? "#7203FF" : "grey" }}
+              size={24}
+              color="black"
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={Profile}
+        options={{
+          title: "",
+          tabBarIcon: ({ focused }) => (
+            <FontAwesome5
+              style={{ top: 6, color: focused ? "#7203FF" : "grey" }}
+              name="user"
+              size={24}
+              color="black"
+            />
+          ),
+        }}
+      />
     </Tab.Navigator>
   );
 }
@@ -49,20 +91,6 @@ function MenuStack() {
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Categories" component={Categories} />
       <Stack.Screen name="Vegetables" component={Vegetables} />
-    </Stack.Navigator>
-  );
-}
-function CartStack() {
-  return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="Cart" component={Cart} />
-    </Stack.Navigator>
-  );
-}
-function ProfileStack() {
-  return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="Profile" component={Profile} />
     </Stack.Navigator>
   );
 }

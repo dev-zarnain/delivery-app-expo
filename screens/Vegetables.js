@@ -58,7 +58,10 @@ const Vegetables = ({ navigation }) => {
     <SafeAreaView style={{ flex: 1 }}>
       <ImageBackground>
         <View style={{ paddingHorizontal: 18 }}>
-          <TouchableOpacity onPress={() => navigation.goBack()}>
+          <TouchableOpacity
+            style={{ width: 20 }}
+            onPress={() => navigation.goBack()}
+          >
             <MaterialIcons
               style={{ marginTop: 12 }}
               name="arrow-back-ios"
@@ -88,6 +91,7 @@ const Vegetables = ({ navigation }) => {
           <FlatList
             showsHorizontalScrollIndicator={false}
             contentContainerStyle={{
+              paddingBottom: 10,
               marginTop: 22,
               width: "150%",
               flexWrap: "wrap",
@@ -110,6 +114,8 @@ const Vegetables = ({ navigation }) => {
           />
         </View>
         <FlatList
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={{ paddingBottom: "74%" }}
           data={VegetableList}
           renderItem={({ item }) => (
             <TouchableOpacity
@@ -161,6 +167,7 @@ const Vegetables = ({ navigation }) => {
                     <AntDesign name="hearto" size={18} color="grey" />
                   </TouchableOpacity>
                   <TouchableOpacity
+                    onPress={() => navigation.navigate("Cart")}
                     style={{
                       borderWidth: 1,
                       borderColor: "#0BCE83",

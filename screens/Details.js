@@ -8,7 +8,7 @@ import {
   View,
 } from "react-native";
 import React from "react";
-import { MaterialIcons, AntDesign, Feather } from "@expo/vector-icons";
+import { AntDesign, Feather } from "@expo/vector-icons";
 
 const Details = ({ navigation }) => {
   return (
@@ -70,6 +70,7 @@ const Details = ({ navigation }) => {
               <AntDesign name="hearto" size={18} color="grey" />
             </TouchableOpacity>
             <TouchableOpacity
+              onPress={() => navigation.navigate("Cart")}
               style={{
                 alignItems: "center",
                 flexDirection: "row",

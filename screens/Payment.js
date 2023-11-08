@@ -19,7 +19,10 @@ const Payment = ({ navigation }) => {
           padding: 18,
         }}
       >
-        <TouchableOpacity onPress={() => navigation.goBack()}>
+        <TouchableOpacity
+          style={{ width: 20 }}
+          onPress={() => navigation.goBack()}
+        >
           <MaterialIcons
             style={{ marginTop: 12 }}
             name="arrow-back-ios"

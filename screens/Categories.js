@@ -53,8 +53,11 @@ const Categories = ({ navigation }) => {
   ];
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <View style={{ paddingHorizontal: 18 }}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
+      <View style={{ paddingHorizontal: 18, paddingBottom: "39%" }}>
+        <TouchableOpacity
+          style={{ width: 20 }}
+          onPress={() => navigation.goBack()}
+        >
           <MaterialIcons
             style={{ marginTop: 12 }}
             name="arrow-back-ios"
@@ -88,7 +91,7 @@ const Categories = ({ navigation }) => {
           renderItem={({ item }) => (
             <View style={{ flex: 1, flexDirection: "row" }}>
               <TouchableOpacity
-              onPress={()=> navigation.navigate("Vegetables")}
+                onPress={() => navigation.navigate("Vegetables")}
                 style={{
                   marginTop: 22,
                   borderRadius: 12,
